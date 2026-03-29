@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A modern, responsive portfolio for a developer and student, featuring projects, skills, experience, resume, and contact details."
+  />
+  <meta name="theme-color" content="#07111f" />
+  <meta property="og:title" content="Your Name | Portfolio" />
+  <meta
+    property="og:description"
+    content="Modern portfolio with projects, skills, experience, resume, and contact information."
+  />
+  <meta property="og:type" content="website" />
+  <title>SERG | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+
+  <div data-include="sections/header.html"></div>
+
+  <main>
+    <div data-include="sections/home.html"></div>
+    <div data-include="sections/about.html"></div>
+    <div data-include="sections/skills.html"></div>
+    <div data-include="sections/projects.html"></div>
+    <div data-include="sections/resume.html"></div>
+    <div data-include="sections/contact.html"></div>
+  </main>
+
+  <div data-include="sections/footer.html"></div>
+
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>

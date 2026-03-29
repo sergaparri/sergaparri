@@ -1,0 +1,27 @@
+.resume-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.timeline-item {
+  padding-left: 18px;
+  border-left: 2px solid rgba(125, 211, 252, 0.35);
+}
+
+.timeline-item span {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--warm);
+  font-weight: 700;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--muted);
+}
