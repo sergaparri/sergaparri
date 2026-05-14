@@ -12,13 +12,9 @@ SERG/assets/backend/node_modules/
 *.env
 
 # Sensitive portfolio documents
-SERG/assets/documents/*
-!SERG/assets/documents/.gitkeep
+
 
 # Local image drafts and exports
-SERG/assets/images/*
-SERG/assets/images/gallery/*
-!SERG/assets/images/.gitkeep
 
 # OS clutter
 .DS_Store
