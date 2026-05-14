@@ -1,7 +1,7 @@
 .hero {
   min-height: calc(100vh - 88px);
   display: grid;
-  grid-template-columns:2.15fr 0.85fr;
+  grid-template-columns: 2.15fr 0.85fr;
   align-items: center;
   gap: 34px;
 }
@@ -226,7 +226,7 @@ body.light-mode .hero-art-toggle:focus-visible .hero-art-hint {
   }
 }
 
-@keyframes partciles {
+@keyframes particles {
   0%,
   100% {
     translate: 0px 16px;
@@ -236,20 +236,20 @@ body.light-mode .hero-art-toggle:focus-visible .hero-art-hint {
   }
 }
 
-.hero-art #particles {
-  animation: partciles 4s ease-in-out infinite;
+.hero-art .particles {
+  animation: particles 4s ease-in-out infinite;
 }
 
-.hero-art #animatedStop {
+.hero-art .animated-stop {
   animation: umbral 4s infinite;
 }
 
-.hero-art #bounce {
+.hero-art .bounce {
   animation: bounce 4s ease-in-out infinite;
   translate: 0px 36px;
 }
 
-.hero-art #bounce2 {
+.hero-art .bounce-2 {
   animation: bounce2 4s ease-in-out infinite;
   translate: 0px 46px;
   animation-delay: 0.5s;

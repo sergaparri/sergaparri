@@ -1,0 +1,24 @@
+# Local editor settings
+.vscode/
+.idea/
+
+# Dependency installs
+SERG/assets/node_modules/
+SERG/assets/backend/node_modules/
+
+# Environment and secret files
+.env
+.env.*
+*.env
+
+# Sensitive portfolio documents
+SERG/assets/documents/*
+!SERG/assets/documents/.gitkeep
+
+# Local image drafts and exports
+SERG/assets/images/*
+!SERG/assets/images/.gitkeep
+
+# OS clutter
+.DS_Store
+Thumbs.db
