@@ -13,6 +13,16 @@ main {
   scroll-margin-top: 96px;
 }
 
+#home {
+  padding-top: 48px;
+}
+
+#about,
+#projects,
+#contact {
+  padding-top: 96px;
+}
+
 .site-header {
   padding: 14px 16px;
   gap: 12px;
@@ -162,6 +172,59 @@ body.light-mode .site-nav {
   font-size: 1.35rem;
 }
 
+.projects-intro {
+  gap: 10px;
+}
+
+.gallery-carousel {
+  --gallery-stage-height: clamp(260px, 78vw, 380px);
+  margin-top: 22px;
+  padding: 18px 44px 10px;
+}
+
+.gallery-stage {
+  min-height: var(--gallery-stage-height);
+}
+
+.gallery-card {
+  width: clamp(165px, 62vw, 245px);
+  height: clamp(220px, 76vw, 330px);
+  border-radius: 22px;
+}
+
+.gallery-card[data-position="current"] {
+  transform: translate3d(-50%, -50%, 130px) scale(1) rotateY(0deg);
+}
+
+.gallery-card[data-position="prev"] {
+  transform: translate3d(calc(-50% - 185px), -50%, -120px) scale(0.8) rotateY(32deg);
+}
+
+.gallery-card[data-position="next"] {
+  transform: translate3d(calc(-50% + 185px), -50%, -120px) scale(0.8) rotateY(-32deg);
+}
+
+.gallery-card[data-position="far-prev"] {
+  transform: translate3d(calc(-50% - 320px), -50%, -280px) scale(0.64) rotateY(44deg);
+}
+
+.gallery-card[data-position="far-next"] {
+  transform: translate3d(calc(-50% + 320px), -50%, -280px) scale(0.64) rotateY(-44deg);
+}
+
+.gallery-control {
+  width: 42px;
+  height: 42px;
+}
+
+.gallery-control-prev {
+  left: 2px;
+}
+
+.gallery-control-next {
+  right: 2px;
+}
+
 .tech-badges {
   gap: 8px;
   margin-top: 16px;
@@ -173,6 +236,19 @@ body.light-mode .site-nav {
 
 .panel {
   padding: 20px;
+}
+
+.form-row {
+  grid-template-columns: 1fr;
+}
+
+.form-footer {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-footer .button {
+  width: 100%;
 }
 
 .site-footer {
@@ -219,7 +295,17 @@ body.light-mode .site-nav {
   }
 
   .section {
-    padding-inline: 18px;
+    padding: 60px 18px 0;
+  }
+
+  #home {
+    padding-top: 60px;
+  }
+
+  #about,
+  #projects,
+  #contact {
+    padding-top: 120px;
   }
 
   .site-header {
@@ -280,37 +366,37 @@ body.light-mode .site-nav {
   }
 
   main {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(220px, 28vw, 240px);
-    gap: 32px 24px;
+    display: block;
     width: min(100%, var(--max-width));
     margin-inline: auto;
     padding: 24px 24px 0;
-    align-items: start;
   }
 
   main > .section {
     max-width: none;
     margin: 0;
-    padding: 0;
+    padding: 72px 0 0;
     width: 100%;
     min-width: 0;
   }
 
+  #home {
+    padding-top: 72px;
+  }
+
+  #about,
+  #projects,
+  #contact {
+    padding-top: 132px;
+  }
+
   #home,
+  #about,
   #skills,
   #projects,
   #resume,
   #contact {
-    grid-column: 1;
-  }
-
-  #about {
-    grid-column: 2;
-    grid-row: 1 / span 5;
-    position: sticky;
-    top: 108px;
-    align-self: start;
+    width: 100%;
   }
 
   .about-grid {
@@ -325,6 +411,10 @@ body.light-mode .site-nav {
     grid-column: 1 / -1;
   }
 
+  .gallery-track {
+    gap: 14px;
+  }
+
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -332,6 +422,23 @@ body.light-mode .site-nav {
   .resume-grid,
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .form-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .form-footer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .form-footer .button {
+    width: auto;
   }
 
   .footer-grid {
@@ -367,9 +474,22 @@ body.light-mode .site-nav {
   }
 
   main {
-    grid-template-columns: minmax(0, 1fr) clamp(240px, 24vw, 280px);
-    gap: 36px 28px;
+    display: block;
     padding: 28px 32px 0;
+  }
+
+  main > .section {
+    padding-top: 84px;
+  }
+
+  #home {
+    padding-top: 84px;
+  }
+
+  #about,
+  #projects,
+  #contact {
+    padding-top: 156px;
   }
 
   .hero {
@@ -381,7 +501,7 @@ body.light-mode .site-nav {
 
   .hero h1 {
     font-size: clamp(3.4rem, 6vw, 5.8rem);
-    max-width: 11ch;
+    max-width: 14ch;
   }
 
   .lead {
@@ -398,6 +518,46 @@ body.light-mode .site-nav {
 
   .hero-highlights li:last-child {
     grid-column: auto;
+  }
+
+  .gallery-carousel {
+    margin-top: 28px;
+    padding: 22px 56px 12px;
+  }
+
+  .gallery-stage {
+    min-height: clamp(320px, 42vw, 540px);
+  }
+
+  .gallery-card {
+    width: clamp(205px, 25vw, 310px);
+    height: clamp(270px, 34vw, 430px);
+    border-radius: 28px;
+  }
+
+  .gallery-card[data-position="current"] {
+    transform: translate3d(-50%, -50%, 180px) scale(1) rotateY(0deg);
+  }
+
+  .gallery-card[data-position="prev"] {
+    transform: translate3d(calc(-50% - 285px), -50%, -170px) scale(0.8) rotateY(34deg);
+  }
+
+  .gallery-card[data-position="next"] {
+    transform: translate3d(calc(-50% + 285px), -50%, -170px) scale(0.8) rotateY(-34deg);
+  }
+
+  .gallery-card[data-position="far-prev"] {
+    transform: translate3d(calc(-50% - 470px), -50%, -360px) scale(0.64) rotateY(46deg);
+  }
+
+  .gallery-card[data-position="far-next"] {
+    transform: translate3d(calc(-50% + 470px), -50%, -360px) scale(0.64) rotateY(-46deg);
+  }
+
+  .gallery-control {
+    width: 48px;
+    height: 48px;
   }
 
   .hero-art {
@@ -440,14 +600,6 @@ body.light-mode .site-nav {
     padding-inline: max(24px, calc((100vw - var(--max-width)) / 2));
   }
 
-  main {
-    gap: 40px 32px;
-  }
-
-  #about {
-    top: 120px;
-  }
-
   .hero {
     gap: 40px;
     min-height: calc(100vh - 140px);
@@ -477,12 +629,21 @@ body.light-mode .site-nav {
   }
 
   main {
-    gap: 48px 36px;
     padding-top: 32px;
   }
 
-  #about {
-    top: 128px;
+  main > .section {
+    padding-top: 96px;
+  }
+
+  #home {
+    padding-top: 10px;
+  }
+
+  #about,
+  #projects,
+  #contact {
+    padding-top: 176px;
   }
 
   .hero {

@@ -17,6 +17,7 @@ SERG/assets/documents/*
 
 # Local image drafts and exports
 SERG/assets/images/*
+SERG/assets/images/gallery/*
 !SERG/assets/images/.gitkeep
 
 # OS clutter

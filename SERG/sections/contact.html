@@ -1,49 +1,79 @@
 <section id="contact" class="section">
-  <div class="section-heading reveal">
+  <div class="contact-header reveal">
     <p class="eyebrow">Contact</p>
-    <h2>Reach out for internships, freelance work, or collaboration.</h2>
+    <h2>Contact me</h2>
+    <p>If you have a project, question, or collaboration idea, feel free to get in touch.</p>
+    <div class="contact-divider" aria-hidden="true">
+      <span></span>
+      <i class="bi bi-caret-up-fill"></i>
+      <span></span>
+    </div>
   </div>
 
   <div class="contact-grid">
-    <form class="panel contact-form reveal" id="contact-form">
-      <label>
-        Name
-        <input type="text" name="name" placeholder="Your name" required />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" placeholder="you@example.com" required />
-      </label>
-      <label>
-        Subject
-        <input type="text" name="subject" placeholder="Project inquiry" required />
-      </label>
-      <label>
+    <aside class="contact-info reveal" aria-label="Contact details">
+      <div class="contact-info-item">
+        <p class="contact-kicker">Phone</p>
+        <a class="contact-value contact-link" href="tel:09760948694">09760948694</a>
+        <span class="contact-icon" aria-hidden="true"><i class="bi bi-phone"></i></span>
+      </div>
+
+      <div class="contact-info-item">
+        <p class="contact-kicker">Address</p>
+        <p class="contact-value">Willowbend Subd, Pandi, Bulacan</p>
+        <span class="contact-icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span>
+      </div>
+
+      <div class="contact-info-item">
+        <p class="contact-kicker">Email</p>
+        <a class="contact-value contact-link" href="mailto:sergaparri@gmail.com">sergaparri@gmail.com</a>
+        <span class="contact-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+      </div>
+
+      <div class="contact-info-item">
+        <p class="contact-kicker">Social</p>
+        <nav class="contact-links" aria-label="Social links">
+          <a class="icon-link" href="https://github.com/sergaparri" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i class="bi bi-github" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://www.facebook.com/sergmichael.aparri" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <i class="bi bi-facebook" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://www.instagram.com/s.erg2/" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <i class="bi bi-instagram" aria-hidden="true"></i>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/aparri-serg/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i class="bi bi-linkedin" aria-hidden="true"></i>
+          </a>
+        </nav>
+        <span class="contact-icon" aria-hidden="true"><i class="bi bi-link-45deg"></i></span>
+      </div>
+    </aside>
+
+    <form class="contact-form reveal" id="contact-form">
+      <div class="form-row">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Subject
+          <input type="text" name="subject" placeholder="Project inquiry" required />
+        </label>
+      </div>
+      <label class="message-field">
         Message
         <textarea name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
       </label>
-      <button class="button button-primary" type="submit">Send Message</button>
-      <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+      <div class="form-footer">
+        <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+        <button class="button button-primary" type="submit">Send</button>
+      </div>
       <p class="form-note">This form sends directly through EmailJS with no backend required.</p>
     </form>
-
-    <article class="panel reveal">
-      <h3>Find Me Online</h3>
-      <p>These links go to my current public profiles.</p>
-      <div class="contact-links">
-        <a class="icon-link" href="https://github.com/sergaparri" target="_blank" rel="noreferrer" aria-label="GitHub">
-          <i class="bi bi-github" aria-hidden="true"></i>
-        </a>
-        <a class="icon-link" href="https://www.facebook.com/sergmichael.aparri" target="_blank" rel="noreferrer" aria-label="Facebook">
-          <i class="bi bi-facebook" aria-hidden="true"></i>
-        </a>
-        <a class="icon-link" href="https://www.instagram.com/s.erg2/" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <i class="bi bi-instagram" aria-hidden="true"></i>
-        </a>
-        <a class="icon-link" href="https://www.linkedin.com/in/aparri-serg/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <i class="bi bi-linkedin" aria-hidden="true"></i>
-        </a>
-      </div>
-    </article>
   </div>
 </section>

@@ -4,6 +4,7 @@ export function initContactForm() {
 
   const statusEl = document.querySelector('#contact-status');
   const submitButton = contactForm.querySelector('button[type="submit"]');
+  const defaultButtonLabel = submitButton?.textContent?.trim() || 'Send';
   let successResetTimer = null;
 
   const EMAILJS_SERVICE_ID = 'service_serg';
@@ -47,7 +48,7 @@ export function initContactForm() {
 
     submitButton.disabled = isSubmitting;
     submitButton.dataset.loading = isSubmitting ? 'true' : 'false';
-    submitButton.textContent = isSubmitting ? 'Sending...' : 'Send Message';
+    submitButton.textContent = isSubmitting ? 'Sending...' : defaultButtonLabel;
   };
 
   contactForm.addEventListener('submit', async (event) => {
