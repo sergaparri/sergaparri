@@ -43,6 +43,10 @@ const galleryImages = [
 export function initGalleryCarousel() {
   const track = document.querySelector('[data-gallery-track]');
   const stage = document.querySelector('[data-gallery-stage]');
+  const archiveGrid = document.querySelector('[data-gallery-grid]');
+  const archiveModal = document.querySelector('[data-gallery-archive-modal]');
+  const openArchiveButton = document.querySelector('[data-gallery-open]');
+  const closeArchiveButton = document.querySelector('[data-gallery-archive-close]');
   const modal = document.querySelector('[data-gallery-modal]');
   const modalImage = document.querySelector('[data-gallery-modal-image]');
   const modalCaption = document.querySelector('[data-gallery-modal-caption]');
@@ -64,7 +68,8 @@ export function initGalleryCarousel() {
   let autoplayId = null;
   let isHovering = false;
   let isKeyboardActive = false;
-  let isModalOpen = false;
+  let isPreviewModalOpen = false;
+  let isArchiveModalOpen = false;
 
   const createCard = (item, index) => {
     const card = document.createElement('article');
@@ -90,8 +95,39 @@ export function initGalleryCarousel() {
     return card;
   };
 
+  const createArchiveCard = (item, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'gallery-grid-card';
+    button.dataset.galleryIndex = String(index);
+    button.setAttribute('aria-label', `Open ${item.alt}`);
+
+    const img = document.createElement('img');
+    img.src = `${sourcePrefix}${item.filename}`;
+    img.alt = item.alt;
+    img.loading = index < 8 ? 'eager' : 'lazy';
+    button.appendChild(img);
+
+    button.addEventListener('click', () => {
+      closeArchiveModal();
+      openPreview(index);
+    });
+
+    return button;
+  };
+
   const cards = galleryMeta.map((item, index) => createCard(item, index));
   cards.forEach((card) => track.appendChild(card));
+
+  if (archiveGrid) {
+    galleryMeta.forEach((item, index) => {
+      const card = createArchiveCard(item, index);
+      if (index % 5 === 0) card.classList.add('gallery-grid-card--wide');
+      if (index % 7 === 0) card.classList.add('gallery-grid-card--tall');
+      if (index % 9 === 0) card.classList.add('gallery-grid-card--large');
+      archiveGrid.appendChild(card);
+    });
+  }
 
   const wrapIndex = (index) => (index + total) % total;
 
@@ -143,7 +179,7 @@ export function initGalleryCarousel() {
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('gallery-modal-open');
-    isModalOpen = true;
+    isPreviewModalOpen = true;
     syncAutoplay();
   };
 
@@ -155,8 +191,44 @@ export function initGalleryCarousel() {
     modalImage.removeAttribute('src');
     modalImage.alt = '';
     modalCaption.textContent = '';
-    document.body.classList.remove('gallery-modal-open');
-    isModalOpen = false;
+    isPreviewModalOpen = false;
+
+    if (!isArchiveModalOpen) {
+      document.body.classList.remove('gallery-modal-open');
+    }
+
+    syncAutoplay();
+  };
+
+  const openArchiveModal = () => {
+    if (!archiveModal) return;
+
+    if (modal?.classList.contains('is-open')) {
+      closePreview();
+    }
+
+    archiveModal.classList.add('is-open');
+    archiveModal.setAttribute('aria-hidden', 'false');
+    openArchiveButton?.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('gallery-modal-open');
+    document.body.classList.add('gallery-archive-open');
+    isArchiveModalOpen = true;
+    syncAutoplay();
+  };
+
+  const closeArchiveModal = () => {
+    if (!archiveModal) return;
+
+    archiveModal.classList.remove('is-open');
+    archiveModal.setAttribute('aria-hidden', 'true');
+    openArchiveButton?.setAttribute('aria-expanded', 'false');
+    isArchiveModalOpen = false;
+    document.body.classList.remove('gallery-archive-open');
+
+    if (!isPreviewModalOpen) {
+      document.body.classList.remove('gallery-modal-open');
+    }
+
     syncAutoplay();
   };
 
@@ -183,7 +255,7 @@ export function initGalleryCarousel() {
   const scheduleAutoplay = () => {
     clearAutoplay();
 
-    if (prefersReducedMotion.matches || isHovering || isKeyboardActive || isModalOpen) {
+    if (prefersReducedMotion.matches || isHovering || isKeyboardActive || isPreviewModalOpen || isArchiveModalOpen) {
       return;
     }
 
@@ -205,6 +277,15 @@ export function initGalleryCarousel() {
   nextButton?.addEventListener('click', () => {
     goNext();
     syncAutoplay();
+  });
+
+  openArchiveButton?.addEventListener('click', openArchiveModal);
+  closeArchiveButton?.addEventListener('click', closeArchiveModal);
+
+  archiveModal?.addEventListener('click', (event) => {
+    if (event.target === archiveModal) {
+      closeArchiveModal();
+    }
   });
 
   stage.addEventListener('mouseenter', () => {
@@ -238,17 +319,22 @@ export function initGalleryCarousel() {
   });
 
   document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && archiveModal?.classList.contains('is-open')) {
+      closeArchiveModal();
+      return;
+    }
+
     if (event.key === 'Escape' && modal?.classList.contains('is-open')) {
       closePreview();
       return;
     }
 
-    if (event.key === 'ArrowLeft' && !modal?.classList.contains('is-open')) {
+    if (event.key === 'ArrowLeft' && !modal?.classList.contains('is-open') && !archiveModal?.classList.contains('is-open')) {
       goPrev();
       syncAutoplay();
     }
 
-    if (event.key === 'ArrowRight' && !modal?.classList.contains('is-open')) {
+    if (event.key === 'ArrowRight' && !modal?.classList.contains('is-open') && !archiveModal?.classList.contains('is-open')) {
       goNext();
       syncAutoplay();
     }

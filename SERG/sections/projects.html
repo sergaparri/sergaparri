@@ -9,7 +9,9 @@
       <span>Posters</span>
       <span>Illustrations</span>
       <span>Concept art</span>
-      <a href="#project-cards">View More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      <button class="gallery-view-more" type="button" data-gallery-open aria-haspopup="dialog" aria-controls="gallery-archive-modal" aria-expanded="false">
+        View More <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 
@@ -33,6 +35,20 @@
       <img data-gallery-modal-image alt="" />
       <figcaption data-gallery-modal-caption></figcaption>
     </figure>
+  </div>
+
+  <div class="gallery-archive-modal" id="gallery-archive-modal" data-gallery-archive-modal role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="gallery-archive-modal__panel">
+      <button class="gallery-archive-modal__close" type="button" data-gallery-archive-close aria-label="Close gallery">
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+      </button>
+      <div class="gallery-archive-modal__header">
+        <p class="eyebrow">Expanded Gallery</p>
+        <h3>All digital arts</h3>
+        <p>Click any image to preview it in full size.</p>
+      </div>
+      <div class="gallery-grid" data-gallery-grid aria-label="Expanded gallery grid"></div>
+    </div>
   </div>
 
   <div class="projects-grid" id="project-cards">

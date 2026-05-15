@@ -67,6 +67,37 @@
   background: rgba(77, 215, 200, 0.12);
 }
 
+.gallery-view-more {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.gallery-view-more:hover,
+.gallery-view-more:focus-visible {
+  transform: translateY(-1px);
+  color: var(--text);
+  border-color: rgba(77, 215, 200, 0.34);
+  background: rgba(77, 215, 200, 0.12);
+  outline: none;
+}
+
 .gallery-carousel {
   --gallery-width: min(100%, 1200px);
   --gallery-stage-height: clamp(300px, 42vw, 560px);
@@ -482,4 +513,157 @@ body.light-mode .project-shot-image {
   background:
     radial-gradient(circle at top right, rgba(37, 99, 235, 0.08), transparent 34%),
     linear-gradient(135deg, #f8fbff, #edf3f9 45%, #e8eef6 100%);
+}
+
+.gallery-archive-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(248, 248, 246, 0.9);
+  backdrop-filter: blur(18px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.gallery-archive-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.gallery-archive-modal__panel {
+  position: relative;
+  width: min(100%, 1320px);
+  max-height: 90vh;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 24, 39, 0.24) transparent;
+  padding: 28px;
+  border-radius: 32px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background:
+    radial-gradient(circle at 16% 14%, rgba(17, 24, 39, 0.04), transparent 24%),
+    radial-gradient(circle at 84% 18%, rgba(17, 24, 39, 0.035), transparent 22%),
+    linear-gradient(135deg, #f8f8f6 0%, #eeede8 50%, #f7f7f5 100%);
+  box-shadow: var(--shadow);
+}
+
+.gallery-archive-modal__panel::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.gallery-archive-modal__panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery-archive-modal__panel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background: rgba(17, 24, 39, 0.22);
+}
+
+.gallery-archive-modal__panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 24, 39, 0.34);
+}
+
+.gallery-archive-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  margin-left: auto;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  color: #111827;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.gallery-archive-modal__header {
+  max-width: 760px;
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 22px;
+  padding-right: 64px;
+}
+
+.gallery-archive-modal__header h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.gallery-archive-modal__header p:last-of-type {
+  margin: 0;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 150px;
+  grid-auto-flow: dense;
+  gap: 14px;
+}
+
+.gallery-grid-card {
+  appearance: none;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(246, 198, 111, 0.12), transparent 34%),
+    linear-gradient(135deg, #f8fbff, #edf3f9 45%, #e8eef6 100%);
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.gallery-grid-card:hover,
+.gallery-grid-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(77, 215, 200, 0.34);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+  outline: none;
+}
+
+.gallery-grid-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery-grid-card--wide {
+  grid-column: span 2;
+}
+
+.gallery-grid-card--tall {
+  grid-row: span 2;
+}
+
+.gallery-grid-card--large {
+  grid-column: span 2;
+  grid-row: span 2;
 }
