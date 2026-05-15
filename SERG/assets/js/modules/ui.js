@@ -4,7 +4,6 @@ export function initUI() {
   const projectCards = document.querySelectorAll('.projects-grid .project-card');
   const themeToggle = document.querySelector('[data-theme-toggle]');
   const themeHint = document.querySelector('[data-theme-hint]');
-  const themeIcon = themeToggle?.querySelector('i');
   const themeStorageKey = 'serg-portfolio-theme';
 
   if (year) {
@@ -26,14 +25,11 @@ export function initUI() {
         'aria-label',
         isLight ? 'Switch portfolio to dark mode' : 'Switch portfolio to light mode'
       );
+      themeToggle.dataset.themeState = isLight ? 'light' : 'dark';
     }
 
     if (themeHint) {
       themeHint.textContent = isLight ? 'Dark mode' : 'Light mode';
-    }
-
-    if (themeIcon) {
-      themeIcon.className = isLight ? 'bi bi-sun-fill' : 'bi bi-moon-stars';
     }
 
     try {
