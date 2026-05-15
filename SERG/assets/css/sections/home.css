@@ -178,6 +178,7 @@
 }
 
 .landing-stat--theme {
+  min-height: 132px;
   padding: 0;
   overflow: visible;
   background: transparent;
@@ -188,12 +189,12 @@
 .theme-toggle-card {
   appearance: none;
   width: 100%;
-  min-height: 100%;
+  min-height: 132px;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 92px 1fr;
   align-items: center;
-  gap: 14px;
-  padding: 18px 18px 16px;
+  gap: 18px;
+  padding: 20px 20px 18px;
   border: 0;
   background: transparent;
   color: inherit;
@@ -207,8 +208,8 @@
 }
 
 .theme-toggle-card__svg {
-  width: 76px;
-  height: 76px;
+  width: 92px;
+  height: 92px;
   display: block;
   overflow: visible;
 }
@@ -222,7 +223,7 @@
 .theme-toggle-card__copy span {
   color: var(--muted);
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.65rem, 4vw, 2.75rem);
+  font-size: clamp(1.9rem, 4.4vw, 3.15rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
 }
@@ -468,15 +469,17 @@ body.light-mode .landing-hero__title-muted {
 }
 
 body.light-mode .landing-hero__visual {
-  min-height: 720px;
-  width: min(100%, 740px);
-  margin-right: 0;
-  margin-bottom: 0;
-  transform: none;
+  min-height: 760px;
+  width: min(100%, 820px);
+  margin-right: -5vw;
+  margin-bottom: -3.5rem;
+  transform: translate(2%, 4%);
 }
 
 body.light-mode .landing-hero__portrait-stage {
-  transform: none;
+  width: min(100%, 800px);
+  aspect-ratio: 0.92;
+  transform: translate(4%, 8%);
 }
 
 @media (max-width: 1080px) {

@@ -543,8 +543,8 @@ body.light-mode .project-shot-image {
   width: min(100%, 1320px);
   max-height: 90vh;
   overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(229, 238, 251, 0.24) transparent;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
   padding: 28px;
   border-radius: 32px;
   border: 1px solid rgba(148, 163, 184, 0.12);
@@ -556,23 +556,60 @@ body.light-mode .project-shot-image {
 }
 
 .gallery-archive-modal__panel::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 0;
+  height: 0;
 }
 
 .gallery-archive-modal__panel::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(7, 17, 31, 0.92);
 }
 
 .gallery-archive-modal__panel::-webkit-scrollbar-thumb {
   border-radius: 999px;
   border: 3px solid transparent;
   background-clip: content-box;
-  background: rgba(229, 238, 251, 0.22);
+  background: rgba(229, 238, 251, 0.24);
 }
 
 .gallery-archive-modal__panel::-webkit-scrollbar-thumb:hover {
-  background: rgba(229, 238, 251, 0.34);
+  background: rgba(229, 238, 251, 0.38);
+}
+
+body.light-mode .gallery-archive-modal__panel {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+body.light-mode .gallery-archive-modal__panel::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.18);
+}
+
+body.light-mode .gallery-archive-modal__panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+body.light-mode .gallery-archive-modal__panel::-webkit-scrollbar-track {
+  background: rgba(248, 248, 246, 0.96);
+}
+
+.gallery-archive-modal__panel:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(229, 238, 251, 0.28) transparent;
+}
+
+.gallery-archive-modal__panel:hover::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body.light-mode .gallery-archive-modal__panel:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.24) transparent;
+}
+
+body.light-mode .gallery-archive-modal__panel:hover::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
 .gallery-archive-modal__close {

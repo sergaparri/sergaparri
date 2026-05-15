@@ -22,19 +22,19 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(17, 24, 39, 0.28) transparent;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 0;
+  height: 0;
 }
 
 html::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(7, 17, 31, 0.92);
 }
 
 html::-webkit-scrollbar-thumb,
@@ -42,12 +42,55 @@ body::-webkit-scrollbar-thumb {
   border-radius: 999px;
   border: 3px solid transparent;
   background-clip: content-box;
-  background: rgba(17, 24, 39, 0.22);
+  background: rgba(229, 238, 251, 0.24);
 }
 
 html::-webkit-scrollbar-thumb:hover,
 body::-webkit-scrollbar-thumb:hover {
-  background: rgba(17, 24, 39, 0.34);
+  background: rgba(229, 238, 251, 0.38);
+}
+
+html:hover,
+body:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(229, 238, 251, 0.28) transparent;
+}
+
+html:hover::-webkit-scrollbar,
+body:hover::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body.light-mode {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+body.light-mode::-webkit-scrollbar-thumb,
+body.light-mode body::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.18);
+}
+
+body.light-mode::-webkit-scrollbar-thumb:hover,
+body.light-mode body::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+body.light-mode html::-webkit-scrollbar-track,
+body.light-mode body::-webkit-scrollbar-track {
+  background: rgba(248, 248, 246, 0.96);
+}
+
+body.light-mode:hover {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15, 23, 42, 0.24) transparent;
+}
+
+body.light-mode:hover::-webkit-scrollbar,
+body.light-mode:hover body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
 body {
