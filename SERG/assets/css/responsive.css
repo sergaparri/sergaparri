@@ -8,8 +8,8 @@ main {
 
 .section {
   width: min(100%, var(--max-width));
-  margin-inline: auto;
-  padding: 48px 16px 0;
+  margin: 16px auto 0;
+  padding: 56px 16px 64px;
   scroll-margin-top: 96px;
 }
 
@@ -333,6 +333,13 @@ body.light-mode .site-nav {
   margin-inline: auto;
   padding: 40px 16px 72px;
   text-align: center;
+  color: #111827;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(17, 24, 39, 0.05), transparent 24%),
+    radial-gradient(circle at 82% 28%, rgba(17, 24, 39, 0.04), transparent 22%),
+    linear-gradient(135deg, #f8f8f6 0%, #eeede8 50%, #f7f7f5 100%);
 }
 
 .footer-divider {
@@ -343,9 +350,9 @@ body.light-mode .site-nav {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(148, 163, 184, 0.22) 15%,
-    rgba(148, 163, 184, 0.35) 50%,
-    rgba(148, 163, 184, 0.22) 85%,
+    rgba(15, 23, 42, 0.12) 15%,
+    rgba(15, 23, 42, 0.2) 50%,
+    rgba(15, 23, 42, 0.12) 85%,
     transparent 100%
   );
 }
@@ -452,10 +459,10 @@ body.light-mode .site-nav {
   }
 
   main > .section {
-    max-width: none;
-    margin: 0;
-    padding: 72px 0 0;
-    width: 100%;
+    max-width: var(--max-width);
+    margin: 24px auto 0;
+    padding: 72px 24px 80px;
+    width: min(100%, var(--max-width));
     min-width: 0;
   }
 
@@ -541,7 +548,10 @@ body.light-mode .site-nav {
   }
 
   main > .section {
-    padding-top: 84px;
+    max-width: var(--max-width);
+    margin: 24px auto 0;
+    padding: 84px 24px 88px;
+    width: min(100%, var(--max-width));
   }
 
   #home {

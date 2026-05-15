@@ -41,8 +41,8 @@
   min-height: 40px;
   padding: 0 16px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.26);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.78);
   color: var(--muted);
   font-size: 0.86rem;
   font-weight: 700;
@@ -96,8 +96,8 @@
   position: absolute;
   overflow: hidden;
   border-radius: 28px;
-  background: linear-gradient(180deg, rgba(19, 27, 44, 0.98), rgba(8, 13, 24, 0.98));
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(238, 242, 248, 0.98));
+  border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: var(--shadow);
   position: absolute;
   top: 50%;
@@ -161,8 +161,8 @@
 
 .gallery-card:hover,
 .gallery-card:focus-visible {
-  border-color: rgba(77, 215, 200, 0.38);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+  border-color: rgba(77, 215, 200, 0.34);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
 }
 
 .gallery-card:focus-visible {
@@ -190,9 +190,9 @@
   display: grid;
   place-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  background: rgba(7, 17, 31, 0.78);
-  color: var(--text);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  color: #111827;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
   transform: translateY(-50%);
   cursor: pointer;
@@ -205,8 +205,8 @@
 .gallery-control:hover,
 .gallery-control:focus-visible {
   transform: translateY(-50%) scale(1.06);
-  border-color: rgba(77, 215, 200, 0.38);
-  background: rgba(11, 24, 41, 0.92);
+  border-color: rgba(77, 215, 200, 0.34);
+  background: #ffffff;
 }
 
 .gallery-control-prev {
@@ -269,9 +269,9 @@
   width: 46px;
   height: 46px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  background: rgba(7, 17, 31, 0.78);
-  color: var(--text);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.86);
+  color: #111827;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -309,7 +309,7 @@ body.light-mode .gallery-chips .is-active {
 }
 
 body.light-mode .gallery-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(235, 241, 248, 0.96));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(235, 241, 248, 0.98));
   border-color: rgba(15, 23, 42, 0.1);
 }
 
@@ -330,7 +330,7 @@ body.light-mode .gallery-card {
   place-items: center;
   text-align: center;
   padding: 20px;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(15, 23, 42, 0.86);
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -345,7 +345,7 @@ body.light-mode .gallery-card {
   place-items: center;
   background:
     radial-gradient(circle at top right, rgba(246, 198, 111, 0.16), transparent 34%),
-    linear-gradient(135deg, #111827, #172554 45%, #0b1322 100%);
+    linear-gradient(135deg, #f8fbff, #edf3f9 45%, #e8eef6 100%);
 }
 
 .project-shot-image img {
@@ -363,7 +363,7 @@ body.light-mode .gallery-card {
   padding: 8px 12px;
   margin: 0;
   border-radius: 999px;
-  background: rgba(77, 215, 200, 0.1);
+  background: rgba(77, 215, 200, 0.12);
   color: var(--accent);
   font-size: 0.82rem;
   font-weight: 700;
@@ -423,8 +423,8 @@ body.light-mode .gallery-card {
   align-items: center;
   padding: 7px 11px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 24, 39, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 600;
@@ -433,26 +433,26 @@ body.light-mode .gallery-card {
 
 .shot-one {
   background:
-    radial-gradient(circle at top left, rgba(77, 215, 200, 0.35), transparent 35%),
-    linear-gradient(135deg, #0f1c33, #14284c 45%, #0b1322 100%);
+    radial-gradient(circle at top left, rgba(77, 215, 200, 0.24), transparent 35%),
+    linear-gradient(135deg, #f8fbff, #eef3fa 45%, #e4ebf6 100%);
 }
 
 .shot-two {
   background:
-    radial-gradient(circle at top right, rgba(125, 211, 252, 0.28), transparent 34%),
-    linear-gradient(135deg, #1d1635, #1c2a54 50%, #0b1322 100%);
+    radial-gradient(circle at top right, rgba(125, 211, 252, 0.24), transparent 34%),
+    linear-gradient(135deg, #f8fbff, #eef2f8 50%, #e8eef7 100%);
 }
 
 .shot-three {
   background:
-    radial-gradient(circle at center, rgba(246, 198, 111, 0.22), transparent 38%),
-    linear-gradient(135deg, #15233d, #0f1d33 50%, #08111f 100%);
+    radial-gradient(circle at center, rgba(246, 198, 111, 0.2), transparent 38%),
+    linear-gradient(135deg, #f8fbff, #eef3fa 50%, #e5ecf6 100%);
 }
 
 .shot-four {
   background:
-    radial-gradient(circle at top left, rgba(77, 215, 200, 0.2), transparent 32%),
-    linear-gradient(135deg, #14203a, #111f35 48%, #08111f 100%);
+    radial-gradient(circle at top left, rgba(77, 215, 200, 0.18), transparent 32%),
+    linear-gradient(135deg, #f8fbff, #eef3fa 48%, #e6edf6 100%);
 }
 
 body.light-mode .shot-one,

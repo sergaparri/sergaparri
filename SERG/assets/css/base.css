@@ -28,10 +28,10 @@ body {
   margin: 0;
   font-family: "Plus Jakarta Sans", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(77, 215, 200, 0.16), transparent 30%),
-    radial-gradient(circle at top right, rgba(125, 211, 252, 0.14), transparent 26%),
-    linear-gradient(180deg, #07111f 0%, #0a1324 50%, #050a13 100%);
-  color: var(--text);
+    radial-gradient(circle at top left, rgba(17, 24, 39, 0.05), transparent 30%),
+    radial-gradient(circle at top right, rgba(17, 24, 39, 0.035), transparent 26%),
+    linear-gradient(135deg, #f8f8f6 0%, #eeede8 50%, #f7f7f5 100%);
+  color: #111827;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -48,9 +48,9 @@ body.light-mode {
   --warm: #b97820;
   --shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
   background:
-    radial-gradient(circle at top left, rgba(77, 215, 200, 0.18), transparent 30%),
-    radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 28%),
-    linear-gradient(180deg, #f8fbff 0%, #edf4fb 54%, #e2ebf6 100%);
+    radial-gradient(circle at top left, rgba(17, 24, 39, 0.05), transparent 30%),
+    radial-gradient(circle at top right, rgba(17, 24, 39, 0.035), transparent 26%),
+    linear-gradient(135deg, #f8f8f6 0%, #eeede8 50%, #f7f7f5 100%);
 }
 
 body.menu-open {
@@ -249,9 +249,35 @@ body.light-mode .menu-toggle {
 }
 
 .section {
+  --text: #111827;
+  --muted: #5b6472;
+  --panel-border: rgba(15, 23, 42, 0.08);
+  --bg-elevated: rgba(255, 255, 255, 0.82);
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  position: relative;
+  overflow: clip;
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0px 24px 0;
+  margin: 24px auto 0;
+  padding: 72px 24px 80px;
+  color: var(--text);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(17, 24, 39, 0.05), transparent 24%),
+    radial-gradient(circle at 82% 28%, rgba(17, 24, 39, 0.04), transparent 22%),
+    linear-gradient(135deg, #f8f8f6 0%, #eeede8 50%, #f7f7f5 100%);
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(17, 24, 39, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 24, 39, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 74%);
+  opacity: 0.2;
 }
 
 .eyebrow {
@@ -365,8 +391,9 @@ body.light-mode .project-links a:hover {
   display: inline-grid;
   place-items: center;
   border-radius: 14px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  color: #111827;
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -415,8 +442,9 @@ body.light-mode .back-to-top {
 }
 
 .button-secondary {
-  border-color: var(--panel-border);
-  background: rgba(10, 18, 33, 0.64);
+  border-color: rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.8);
+  color: #111827;
 }
 
 .button-ghost {
@@ -526,9 +554,9 @@ body.light-mode .back-to-top {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: 16px;
-  background: rgba(5, 10, 19, 0.85);
+  background: rgba(255, 255, 255, 0.82);
   color: var(--text);
   padding: 14px 16px;
 }
@@ -545,10 +573,16 @@ body.light-mode .back-to-top {
 
 .site-footer {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 24px auto 0;
   padding: 28px 24px 46px;
-  color: var(--muted);
+  color: #111827;
   text-align: center;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(17, 24, 39, 0.05), transparent 24%),
+    radial-gradient(circle at 82% 28%, rgba(17, 24, 39, 0.04), transparent 22%),
+    linear-gradient(135deg, #f8f8f6 0%, #eeede8 50%, #f7f7f5 100%);
 }
 
 .back-to-top {
@@ -560,10 +594,10 @@ body.light-mode .back-to-top {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  border: 1px solid var(--panel-border);
-  background: rgba(10, 18, 33, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
-  color: var(--text);
+  color: #111827;
   z-index: 10;
 }
 
