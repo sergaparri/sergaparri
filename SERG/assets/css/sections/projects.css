@@ -40,7 +40,7 @@
   gap: 8px;
   min-height: 40px;
   padding: 0 16px;
-  border-radius: 999px;
+  border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   background: rgba(14, 24, 42, 0.86);
   color: var(--muted);
@@ -74,7 +74,7 @@
   gap: 8px;
   min-height: 40px;
   padding: 0 16px;
-  border-radius: 999px;
+  border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   background: rgba(14, 24, 42, 0.86);
   color: var(--muted);
@@ -216,11 +216,11 @@
   position: absolute;
   top: 50%;
   z-index: 6;
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
-  border-radius: 999px;
+  border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   background: rgba(14, 24, 42, 0.9);
   color: var(--text);
@@ -297,9 +297,9 @@
   position: absolute;
   top: 18px;
   right: 18px;
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   background: rgba(14, 24, 42, 0.9);
   color: var(--text);
@@ -424,7 +424,7 @@ body.light-mode .gallery-card {
   justify-content: center;
   min-height: 42px;
   padding: 0 16px;
-  border-radius: 999px;
+  border-radius: 14px;
   border: 1px solid rgba(77, 215, 200, 0.18);
   background: rgba(77, 215, 200, 0.08);
   color: var(--text);
@@ -565,7 +565,7 @@ body.light-mode .project-shot-image {
 }
 
 .gallery-archive-modal__panel::-webkit-scrollbar-thumb {
-  border-radius: 999px;
+  border-radius: 14px;
   border: 3px solid transparent;
   background-clip: content-box;
   background: rgba(229, 238, 251, 0.24);
@@ -617,11 +617,11 @@ body.light-mode .gallery-archive-modal__panel:hover::-webkit-scrollbar {
   top: 18px;
   right: 18px;
   margin-left: auto;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 999px;
+  border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.16);
   background: rgba(14, 24, 42, 0.9);
   color: var(--text);
