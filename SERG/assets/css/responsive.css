@@ -690,6 +690,13 @@ body.light-mode .site-footer {
     padding-top: 96px;
   }
 
+  main > #home.section {
+    max-width: none;
+    width: 100%;
+    margin-inline: 0;
+    padding: 0;
+  }
+
   #home {
     padding-top: 0;
   }
@@ -703,6 +710,44 @@ body.light-mode .site-footer {
   .hero {
     gap: 56px;
     min-height: calc(100vh - 152px);
+  }
+
+  .landing-hero {
+    padding-right: 0;
+  }
+
+  .landing-hero__inner {
+    width: 100%;
+    max-width: none;
+    position: static;
+    margin-inline: 0;
+    padding-left: clamp(24px, 4vw, 72px);
+    padding-right: 0;
+  }
+
+  .landing-hero__visual {
+    position: absolute;
+    right: clamp(-12px, -0.7vw, 0px);
+    bottom: 0;
+    width: min(50vw, 860px);
+    min-height: 0;
+  }
+
+  .landing-hero__portrait-stage {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .landing-hero__portrait {
+    width: 100%;
+    height: 100%;
+    object-position: center 56%;
+  }
+
+  .floating-card--badge {
+    top: 10%;
+    right: 18%;
   }
 
   .hero h1 {
@@ -730,10 +775,55 @@ body.light-mode .site-footer {
 
 @media (min-width: 1680px) {
   :root {
-    --max-width: 1440px;
+    --max-width: 1360px;
   }
 
   html {
     font-size: 19px;
+  }
+
+  main > #home.section {
+    max-width: none;
+    width: 100%;
+    margin-inline: 0;
+    padding: 0;
+  }
+
+  .landing-hero {
+    padding-right: 0;
+  }
+
+  .landing-hero__inner {
+    width: 100%;
+    max-width: none;
+    position: static;
+    margin-inline: 0;
+    padding-left: clamp(24px, 4vw, 72px);
+    padding-right: 0;
+  }
+
+  .landing-hero__visual {
+    position: absolute;
+    right: clamp(-12px, -0.7vw, 0px);
+    bottom: 0;
+    width: min(48vw, 920px);
+    min-height: 0;
+  }
+
+  .landing-hero__portrait-stage {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .landing-hero__portrait {
+    width: 100%;
+    height: 100%;
+    object-position: center 56%;
+  }
+
+  .floating-card--badge {
+    top: 10%;
+    right: 14%;
   }
 }
