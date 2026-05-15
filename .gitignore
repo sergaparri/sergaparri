@@ -10,6 +10,7 @@ SERG/assets/backend/node_modules/
 .env
 .env.*
 *.env
+!SERG/assets/backend/.env.example
 
 # Sensitive portfolio documents
 

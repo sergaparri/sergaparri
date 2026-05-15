@@ -12,8 +12,8 @@
   --radius: 24px;
   --radius-sm: 16px;
   --max-width: 1180px;
-  --logo-width: 10rem;
-  --logo-height: 8rem;
+  --logo-width: 5rem;
+  --logo-height: 5rem;
 }
 
 * {
@@ -139,15 +139,15 @@ main,
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  backdrop-filter: blur(18px);
-  background: rgba(7, 17, 31, 0.72);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  backdrop-filter: blur(22px);
+  background: rgba(248, 248, 246, 0.84);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 0;
 }
 
 body.light-mode .site-header {
-  background: rgba(248, 251, 255, 0.82);
-  border-bottom-color: rgba(15, 23, 42, 0.1);
+  background: rgba(248, 248, 246, 0.84);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
 }
 
 .brand {
@@ -183,12 +183,11 @@ body.light-mode .site-header {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 22px;
-  color: var(--muted);
-}
-
-body.light-mode .site-nav {
-  color: #5b6780;
+  gap: 24px;
+  color: #475569;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .site-nav a {
@@ -212,7 +211,7 @@ body.light-mode .site-nav {
 
 .site-nav a:hover,
 .site-nav a.active {
-  color: var(--text);
+  color: #111827;
 }
 
 .site-nav a:hover::after,
@@ -225,15 +224,15 @@ body.light-mode .site-nav {
   width: 48px;
   height: 48px;
   border-radius: 16px;
-  border: 1px solid var(--panel-border);
-  background: rgba(12, 20, 34, 0.9);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
   padding: 0;
 }
 
 body.light-mode .menu-toggle {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(15, 23, 42, 0.08);
 }
 
 .menu-toggle span {
@@ -241,7 +240,7 @@ body.light-mode .menu-toggle {
   width: 18px;
   height: 2px;
   margin: 0 auto;
-  background: var(--text);
+  background: #111827;
   border-radius: 999px;
 }
 
@@ -418,6 +417,44 @@ body.light-mode .back-to-top {
 .button-secondary {
   border-color: var(--panel-border);
   background: rgba(10, 18, 33, 0.64);
+}
+
+.button-ghost {
+  border-color: rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.84);
+  color: #111827;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.button-text {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #111827;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.button-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.button-text:hover::after {
+  transform: scaleX(1);
+  opacity: 0.7;
 }
 
 .about-grid,
