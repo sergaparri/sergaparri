@@ -237,7 +237,14 @@ async function sendThroughEmailJs(payload) {
 }
 
 function shouldFallbackToEmailJs(error) {
-  return !error || error.name === 'TypeError' || error.name === 'AbortError' || error.status >= 500;
+  return (
+    !error ||
+    error.name === 'TypeError' ||
+    error.name === 'AbortError' ||
+    error.status === 404 ||
+    error.status === 405 ||
+    error.status >= 500
+  );
 }
 
 export function initContactForm() {
