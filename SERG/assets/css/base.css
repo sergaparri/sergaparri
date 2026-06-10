@@ -833,6 +833,14 @@ body.light-mode .back-to-top {
     pointer-events: auto;
   }
 
+  .site-nav a {
+    padding: 6px 0;
+  }
+
+  .site-nav a::after {
+    bottom: -4px;
+  }
+
   .hero-highlights {
     grid-template-columns: 1fr;
   }

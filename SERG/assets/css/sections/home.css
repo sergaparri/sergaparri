@@ -626,20 +626,65 @@ body.light-mode .landing-hero__title-muted {
     gap: 18px;
   }
 
+  .landing-hero__copy {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .landing-hero__eyebrow,
+  .landing-hero__title,
+  .landing-hero__subtitle,
+  .landing-hero__text,
+  .landing-hero__actions,
+  .landing-hero__social {
+    grid-column: 1 / -1;
+  }
+
   .landing-hero__title {
     font-size: clamp(2.7rem, 14vw, 4.4rem);
   }
 
   .landing-hero__stats {
-    grid-template-columns: 1fr;
+    display: contents;
+  }
+
+  .landing-hero__stats .landing-stat,
+  .landing-hero__theme-row .theme-toggle-card {
+    width: 100%;
   }
 
   .landing-hero__theme-row {
-    margin-top: 10px;
+    display: contents;
+  }
+
+  .landing-hero__stats .landing-stat {
+    padding: 12px 10px 10px;
+    border-radius: 16px;
+    min-width: 0;
+  }
+
+  .landing-hero__stats .landing-stat strong {
+    font-size: 1.35rem;
+  }
+
+  .landing-hero__stats .landing-stat span {
+    font-size: 0.74rem;
   }
 
   .theme-toggle-card {
-    width: 100%;
+    min-height: 100%;
+    padding: 10px;
+    grid-template-columns: 42px 1fr;
+    border-radius: 16px;
+  }
+
+  .theme-toggle-card__svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .theme-toggle-card__copy span {
+    font-size: 1rem;
   }
 
   .landing-hero__visual {
@@ -658,5 +703,56 @@ body.light-mode .landing-hero__title-muted {
   .floating-card--quote {
     left: 4%;
     max-width: 132px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1080px) {
+  .landing-hero__copy {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .landing-hero__eyebrow,
+  .landing-hero__title,
+  .landing-hero__subtitle,
+  .landing-hero__text,
+  .landing-hero__actions,
+  .landing-hero__social {
+    grid-column: 1 / -1;
+  }
+
+  .landing-hero__stats {
+    display: contents;
+  }
+
+  .landing-hero__stats .landing-stat,
+  .landing-hero__theme-row .theme-toggle-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .landing-hero__stats .landing-stat {
+    padding: 12px 12px 10px;
+    border-radius: 16px;
+  }
+
+  .landing-hero__theme-row {
+    display: contents;
+  }
+
+  .theme-toggle-card {
+    min-height: 100%;
+    padding: 10px;
+    grid-template-columns: 44px 1fr;
+    border-radius: 16px;
+  }
+
+  .theme-toggle-card__svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .theme-toggle-card__copy span {
+    font-size: 1rem;
   }
 }

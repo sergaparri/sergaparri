@@ -12,11 +12,24 @@
   </button>
 
   <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-    <a href="#projects">Work</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#resume">Tools</a>
-    <a href="#contact">Contact</a>
+    <div class="site-nav__top">
+      <a class="site-nav__brand" href="#home" aria-label="Portfolio home">
+        <span class="brand-mark">
+          <img src="assets/images/serglogo.png" alt="SERG logo" />
+        </span>
+      </a>
+      <button class="site-nav__close" type="button" data-nav-close aria-label="Close navigation">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="site-nav__links">
+      <a href="#projects">Work</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume & Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <a class="button button-primary header-cta" href="#contact">Let&apos;s Talk</a>

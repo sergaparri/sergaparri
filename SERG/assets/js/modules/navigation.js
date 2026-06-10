@@ -1,6 +1,7 @@
 export function initNavigation() {
   const menuToggle = document.querySelector('.menu-toggle');
   const siteNav = document.querySelector('.site-nav');
+  const navClose = document.querySelector('[data-nav-close]');
   const navLinks = document.querySelectorAll('.site-nav a');
 
   if (!menuToggle || !siteNav) return;
@@ -17,10 +18,24 @@ export function initNavigation() {
     document.body.classList.toggle('menu-open', isOpen);
   });
 
+  navClose?.addEventListener('click', closeMenu);
+
   navLinks.forEach((link) => link.addEventListener('click', closeMenu));
 
   document.addEventListener('click', (event) => {
     if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  siteNav.addEventListener('click', (event) => {
+    if (event.target === siteNav) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && siteNav.classList.contains('open')) {
       closeMenu();
     }
   });
