@@ -1057,3 +1057,74 @@ body.light-mode .site-footer {
     background: #f1f5f9;
   }
 }
+
+@media (min-width: 1081px) {
+  .site-nav {
+    position: static;
+    inset: auto;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .site-nav__top {
+    display: none;
+  }
+
+  .site-nav__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: auto;
+    height: auto;
+    max-width: none;
+    margin-inline: 0;
+    padding: 0;
+  }
+
+  .site-nav__close {
+    display: none;
+  }
+
+  .site-nav__links a {
+    width: auto;
+    padding: 0;
+    text-align: left;
+    color: var(--muted);
+    font-size: inherit;
+    font-weight: inherit;
+    border: 0;
+    background: transparent;
+    position: relative;
+  }
+
+  .site-nav__links a::after {
+    display: block;
+    bottom: -8px;
+  }
+
+  .site-nav__links a:hover,
+  .site-nav__links a.active {
+    color: var(--text);
+    background: transparent;
+  }
+
+  .site-nav__links a:hover::after,
+  .site-nav__links a.active::after {
+    transform: scaleX(1);
+  }
+}
