@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  min-height: 100%;
 }
 
 .skill-header {
@@ -39,6 +40,55 @@
   background: linear-gradient(90deg, var(--accent), var(--accent-strong));
 }
 
+.skill-points {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-points li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.skill-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  transform: translateY(-50%);
+}
+
+.skill-panel--tools {
+  gap: 16px;
+}
+
+.tool-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.tool-group {
+  display: grid;
+  gap: 10px;
+}
+
+.tool-group__label {
+  color: var(--warm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -51,4 +101,9 @@
   background: rgba(17, 24, 39, 0.04);
   color: var(--text);
   border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .tags span {
+  background: rgba(15, 23, 42, 0.03);
+  border-color: rgba(15, 23, 42, 0.08);
 }

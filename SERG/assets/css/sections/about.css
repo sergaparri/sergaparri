@@ -1,4 +1,152 @@
 .about-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  align-items: stretch;
   margin-top: 28px;
+}
+
+.about-card,
+.about-spotlight,
+.about-facts {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before,
+.about-spotlight::before,
+.about-facts::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top right, rgba(77, 215, 200, 0.14), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(125, 211, 252, 0.08), transparent 30%);
+  opacity: 0.85;
+}
+
+.about-card > *,
+.about-spotlight > *,
+.about-facts > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-card h3,
+.about-spotlight h3,
+.about-facts h3 {
+  margin-bottom: 0;
+}
+
+.about-card p + p {
+  margin-top: 0;
+}
+
+.about-card__eyebrow {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.about-tags span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(77, 215, 200, 0.08);
+  border: 1px solid rgba(125, 211, 252, 0.16);
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.about-sidebar {
+  display: grid;
+  gap: 18px;
+}
+
+.about-spotlight {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background:
+    linear-gradient(180deg, rgba(12, 20, 36, 0.92), rgba(12, 20, 36, 0.78)),
+    radial-gradient(circle at top right, rgba(77, 215, 200, 0.16), transparent 32%);
+}
+
+.about-spotlight p {
+  max-width: 32ch;
+}
+
+.about-facts {
+  background:
+    linear-gradient(180deg, rgba(12, 20, 36, 0.9), rgba(12, 20, 36, 0.76)),
+    radial-gradient(circle at bottom right, rgba(125, 211, 252, 0.12), transparent 28%);
+}
+
+.about-facts h3 {
+  margin-bottom: 14px;
+}
+
+.about-fact-list {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-fact-list li {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.about-fact-list strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.about-fact-list span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+body.light-mode .about-tags span {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.light-mode .about-spotlight {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.84)),
+    radial-gradient(circle at top right, rgba(15, 23, 42, 0.06), transparent 32%);
+}
+
+body.light-mode .about-facts {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.84)),
+    radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.04), transparent 28%);
+}
+
+body.light-mode .about-fact-list li {
+  background: rgba(15, 23, 42, 0.025);
+  border-color: rgba(15, 23, 42, 0.08);
 }
